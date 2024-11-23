@@ -20,7 +20,7 @@ class Questphp{
     $options = [
     	[
         	'key' => 'option 1',
-        	'title' => 'nome do titulo 1'
+        	'title' => 'name title'
     	],
 	];
 	*/

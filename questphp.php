@@ -16,15 +16,6 @@ class Questphp{
 
 	}
 
-	/*
-    $options = [
-    	[
-        	'key' => 'option 1',
-        	'title' => 'name title'
-    	],
-	];
-	*/
-
 	public function Add($title_questions, $options, $correct_answer) {
       
         if (empty($options)) {
@@ -33,7 +24,7 @@ class Questphp{
 
         $correct_found = false;
         foreach ($options as $option) {
-            if ($option['key'] === $correct_answer) {
+            if ($option['key'] == $correct_answer) {
                 $correct_found = true;
                 break;
             }
@@ -44,8 +35,9 @@ class Questphp{
         }
 
         $questionBlock = [
-            ['key' => 'title', 'value' => $title_questions], 
-            ['key' => 'correct', 'value' => $correct_answer],  
+            'title' => $title_questions, 
+            'correct' => $correct_answer,
+            'options' => $options
         ];
 
         
@@ -53,7 +45,7 @@ class Questphp{
 
             $questionBlock[] = [
                 'key' => (string)($index + 1), 
-                'title' => $option['title'],  
+                'title' => $option['title']
             ];
             
         }
